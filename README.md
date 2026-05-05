@@ -41,10 +41,10 @@ parent directory:
 mkdir -p ~/vbpf-ae
 cd ~/vbpf-ae
 
-git clone https://ipads.se.sjtu.edu.cn:1312/vbpf-osdi-2026/llvm-vbpf.git
-git clone https://ipads.se.sjtu.edu.cn:1312/vbpf-osdi-2026/linux-vbpf.git
-git clone https://ipads.se.sjtu.edu.cn:1312/vbpf-osdi-2026/vm.git
-git clone https://ipads.se.sjtu.edu.cn:1312/vbpf-osdi-2026/ebpf-bootstrap.git
+git clone https://github.com/vbpf-osdi-2026/llvm-vbpf.git
+git clone https://github.com/vbpf-osdi-2026/linux-vbpf.git
+git clone https://github.com/vbpf-osdi-2026/vm.git
+git clone https://github.com/vbpf-osdi-2026/ebpf-bootstrap.git
 
 export AE_ROOT="$PWD"
 ```
