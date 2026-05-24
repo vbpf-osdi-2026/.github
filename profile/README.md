@@ -5,10 +5,10 @@ Artifact evaluation guide for OSDI '26.
 This repository contains the global instructions for the vBPF artifact. The
 artifact itself is split across four sibling repositories:
 
-- `llvm-vbpf`
-- `linux-vbpf`
-- `vm`
-- `ebpf-bootstrap`
+- `llvm-vbpf`       (commit: 1f62912)
+- `linux-vbpf`      (commit: 2bce3c3)
+- `vm`              (commit: c778c65)
+- `ebpf-bootstrap`  (commit: ff892d3)
 
 ## Repository Layout
 
