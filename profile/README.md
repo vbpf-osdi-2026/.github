@@ -441,3 +441,22 @@ above when checking namespace behavior.
   vBPF kernel and `/sys/kernel/btf/vmlinux` exists.
 - The LLVM build and VM image download both require significant time and disk
   space.
+
+## Artifact Scope
+
+This artifact is intended to make the vBPF implementation available and to provide small example programs that exercise the core functionality described in the paper. The included programs are not a full benchmark suite. Instead, they serve as lightweight sanity checks and illustrative workloads for validating that the system can be built, run, and used on representative eBPF-style inputs.
+
+In particular, the artifact supports:
+
+| Artifact component | Intended purpose |
+| --- | --- |
+| vBPF source code | Makes the implementation described in the paper available for inspection and reuse |
+| Build/run scripts | Help reviewers build the system and run the provided examples |
+| Example programs | Exercise core vBPF functionality on simple inputs |
+| Documentation | Explains the expected environment and how to reproduce the basic runs |
+
+The artifact provides example programs for reproducing the main namespace-isolation experiments. The basic workflow is use `unshare` to create and enter a new eBPF namespace first, then run representative eBPF programs provided in `bootstrap`, including kprobe, tracepoint, and tcx programs, together with workload programs used in the paper, such as sysbench, lmbench, and PostgreSQL.
+
+The expected result is that eBPF programs running inside the new namespace do not affect workloads outside that namespace. Compared with running the eBPF program and the workload in the same namespace, this setup reduces cross-workload interference and leads to the performance improvements reported in the paper. These programs can also reproduce the key observations from the motivation section.
+
+The artifact is not intended to fully reproduce all experimental results in the paper or to provide a comprehensive benchmark suite. The main goal is to support artifact availability, implementation inspection, and basic functional validation.
